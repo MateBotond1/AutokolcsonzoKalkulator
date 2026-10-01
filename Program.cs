@@ -6,6 +6,7 @@ string VIP = "";
 bool VIPtag = false;
 for (int i = 0; i < 4; i++)
 {
+    Console.WriteLine($"{i + 1}. bérlés adatai:");
     Console.Write("Adja meg a nevét:");
     BNev = Console.ReadLine();
     Console.Write("Adja meg a kölcsönzött napok számát:");
@@ -35,8 +36,26 @@ for (int i = 0; i < 4; i++)
         alapdij *= 1;
         vegosszegek.Add(alapdij);
     }
+
 }
+Console.WriteLine("Rögzített kölcsönzések díjai:");
+for (int i=0; i < 4; i++)
+{
+    Console.WriteLine($"-{i + 1}. bérlés:{vegosszegek[i]} Ft");
+}
+double teljesbev = vegosszegek[0] + vegosszegek[1] + vegosszegek[2] + vegosszegek[3];
+double atlagbevetel = (vegosszegek[0] + vegosszegek[1]+ vegosszegek[2]+ vegosszegek[3])/4;
 
-
-
-Console.WriteLine(vegosszegek);
+string statusz = "";
+if (teljesbev>= 200000)
+{
+    statusz = "Kiemelkedő forgalmú nap!";
+}
+else if (teljesbev>=100000)
+{
+    statusz = "Átlagos forgalmú nap.";
+}
+else
+{
+    statusz = "Gyenge forgalmú nap.";
+}
