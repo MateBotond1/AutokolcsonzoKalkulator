@@ -41,7 +41,7 @@ for (int i = 0; i < 4; i++)
 Console.WriteLine("Rögzített kölcsönzések díjai:");
 for (int i=0; i < 4; i++)
 {
-    Console.WriteLine($"-{i + 1}. bérlés:{vegosszegek[i]} Ft");
+    Console.WriteLine($"\t-{i + 1}. bérlés:{vegosszegek[i]} Ft");
 }
 double teljesbev = vegosszegek[0] + vegosszegek[1] + vegosszegek[2] + vegosszegek[3];
 double atlagbevetel = (vegosszegek[0] + vegosszegek[1]+ vegosszegek[2]+ vegosszegek[3])/4;
@@ -59,3 +59,6 @@ else
 {
     statusz = "Gyenge forgalmú nap.";
 }
+Console.WriteLine($"Napi teljes bevétel:{teljesbev}");
+Console.WriteLine($"Átlagos kölcsönzési díj: {atlagbevetel}");
+Console.WriteLine($"Napi értékelés:{statusz}");
